@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog musical</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 2rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        main {
+            background-color: #FFFFFF;
+            color: #8B0000;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        .post {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+        .post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .post-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .post-title {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #8B0000;
+        }
+        .post-author {
+            font-weight: bold;
+            margin: 4px 0 12px 0;
+            font-size: 0.95rem;
+        }
+        .post-content {
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .post-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 16px auto;
+            border-radius: 4px;
+        }
+        .reactions {
+            display: flex;
+            gap: 8px;
+        }
+        .reaction-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .reaction-btn:hover {
+            background-color: #e2e2e2;
+        }
+        .reaction-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu blog musical</h1>
+        <p>Vou compartilhar conhecimentos sobre musica e produção</p>
+    </header>
+    <main>
+        <article class="post">
+            <div class="post-header">
+                <svg class="post-icon" viewBox="0 0 24 24" fill="#FF0000">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <h2 class="post-title">Meu primeiro post</h2>
+            </div>
+            <p class="post-author">Por: Leonardo Labiak Pereira</p>
+            <p class="post-content">Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de teoria musical e curiosidades da área de música.</p>
+
+            <img class="post-image" src="musica.jpg" alt="Partitura musical">
+ 
+            <div class="reactions">
+                <button class="reaction-btn" onclick="addReaction(this)">
+                    <span>❤️</span> <span class="count">0</span>
+                </button>
+                <button class="reaction-btn" onclick="addReaction(this)">
+                    <span>🔥</span> <span class="count">0</span>
+                </button>
+            </div>
+        </article>
+        <article class="post">
+            <div class="post-header">
+                <svg class="post-icon" viewBox="0 0 24 24" fill="#FF0000">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <h2 class="post-title">Meu segundo post</h2>
+            </div>
+            <p class="post-author">Por: Leonardo Labiak Pereira</p>
+            <p class="post-content">Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de teoria musical e curiosidades da área de música.</p>
+
+            <div class="reactions">
+                <button class="reaction-btn" onclick="addReaction(this)">
+                    <span>❤️</span> <span class="count">0</span>
+                </button>
+                <button class="reaction-btn" onclick="addReaction(this)">
+                    <span>🔥</span> <span class="count">0</span>
+                </button>
+            </div>
+        </article>
+    </main>
+    <script>
+        function addReaction(button) {
+            const countSpan = button.querySelector('.count');
+            let count = parseInt(countSpan.textContent);
+            countSpan.textContent = count + 1;
+        }
+    </script>
+</body>
+</html>
